@@ -16,7 +16,7 @@
   />
 </svelte:head>
 
-<div class="font-spartan">
+<div class="min-h-screen font-spartan flex flex-col">
   <MainContent />
   <Footer />
 </div>
