@@ -16,7 +16,7 @@
   />
 </svelte:head>
 
-<div>
+<div class="font-spartan">
   <MainContent />
   <Footer />
 </div>
