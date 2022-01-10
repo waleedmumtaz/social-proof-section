@@ -1,5 +1,18 @@
 <script>
-  let reviewPlatforms = ['Reviews', 'Report Guru', 'BestTech']
+  let reviewPlatforms = [
+    {
+      platform: 'Reviews',
+      translate: 'md:translate-x-0',
+    },
+    {
+      platform: 'Report Guru',
+      translate: 'md:translate-x-12',
+    },
+    {
+      platform: 'BestTech',
+      translate: 'md:translate-x-24',
+    },
+  ]
   let reviewByPeople = [
     {
       name: 'Colton Smith',
@@ -7,6 +20,7 @@
       buyerStatus: 'Verified Buyer',
       reviewDescription:
         '"We needed the same printed design as the one we had ordered a week prior. Not only did they find the original order, but we also received it in time. Excellent!"',
+      translate: 'md:translate-y-0',
     },
     {
       name: 'Irene Roberts',
@@ -14,6 +28,7 @@
       buyerStatus: 'Verified Buyer',
       reviewDescription:
         '"Customer service is always excellent and very quick turn around. Completely delighted with the simplicity of the purchase and the speed of delivery."',
+      translate: 'md:translate-y-5',
     },
     {
       name: 'Anne Wallace',
@@ -21,16 +36,19 @@
       buyerStatus: 'Verified Buyer',
       reviewDescription:
         '"Put an order with this company and can only praise them for the very high standard. Will definitely use them again and recommend them to everyone!"',
+      translate: 'md:translate-y-10',
     },
   ]
 </script>
 
 <main class="flex-1 flex flex-col justify-center">
-  <div class="pt-20 px-5 md:container md:mx-auto">
+  <div
+    class="pt-20 px-5 md:container md:mx-auto"
+  >
     <div class="md:grid md:grid-cols-2">
       <div>
         <h1
-          class="text-cstm-primary-dark-magenta font-bold text-4xl md:text-6xl text-center md:text-left md:max-w-lg"
+          class="text-cstm-primary-dark-magenta font-bold text-4xl md:text-6xl text-center md:text-left md:max-w-lg mt-"
         >
           10,000+ of our users love our products.
         </h1>
@@ -44,7 +62,7 @@
         <div class="mb-16">
           {#each reviewPlatforms as reviewPlatform}
             <div
-              class="bg-cstm-neutral-light-grayish-magenta py-5 mb-5 text-center rounded-lg"
+              class={`bg-cstm-neutral-light-grayish-magenta py-5 mb-5 text-center rounded-lg md:flex md:items-center md:gap-8 md:max-w-md md:px-8 ${reviewPlatform.translate}`}
             >
               <div class="flex justify-center gap-2 mb-3">
                 {#each { length: 5 } as _}
@@ -52,7 +70,7 @@
                 {/each}
               </div>
               <p class="text-cstm-primary-dark-magenta font-bold">
-                Rated 5 stars in {reviewPlatform}
+                Rated 5 stars in {reviewPlatform.platform}
               </p>
             </div>
           {/each}
@@ -63,7 +81,7 @@
     <div class="md:grid md:grid-cols-3 md:gap-5">
       {#each reviewByPeople as review}
         <div
-          class={`bg-cstm-primary-dark-magenta mb-5 px-8 py-10 rounded-lg text-white`}
+          class={`bg-cstm-primary-dark-magenta mb-5 px-8 py-10 rounded-lg text-white ${review.translate}`}
         >
           <div class="flex items-center gap-5 mb-8">
             <img

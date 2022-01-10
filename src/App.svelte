@@ -16,7 +16,9 @@
   />
 </svelte:head>
 
-<div class="min-h-screen font-spartan flex flex-col">
+<div
+  class="min-h-screen font-spartan flex flex-col bg-pattern-mobile md:bg-pattern-desktop"
+>
   <MainContent />
   <Footer />
 </div>
